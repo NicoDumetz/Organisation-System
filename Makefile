@@ -7,7 +7,8 @@
 
 SRC	=	organized.c \
 		fonc_org.c \
-		fonc_base.c
+		fonc_base.c \
+		sort.c
 
 
 OBJ	=	$(SRC:.c=.o)

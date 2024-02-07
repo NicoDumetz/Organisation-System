@@ -28,5 +28,10 @@ char *my_strdup(char const *src);
 char *verify_type(char const *src);
 int my_strcmp(char const *s1, char const *s2);
 int my_delete_nodes(linked **begin, int id_ref);
+int my_sort_list(linked **begin, int (*cmp)());
+void my_rev_list(linked **begin);
+int comp_name(linked *premier, linked *deuxieme);
+int comp_id(linked *premier, linked *deuxieme);
+
 
 #endif
