@@ -37,6 +37,8 @@ int add(void *data, char **args)
         if (my_strcmp(add->type, "84") == 0)
             return 84;
         i++;
+        if (!args[i])
+            return 84;
         add->name = my_strdup(args[i]);
         add->next = *list;
         my_printf("%s n°%d - \"%s\" added.\n", add->type, add->id, add->name);
