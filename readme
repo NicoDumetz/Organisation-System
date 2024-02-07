@@ -1,0 +1,55 @@
+Project Title: Organization System
+
+Objective:
+The objective of this project is to create a system for organizing materials in a workshop. The system should allow for storing and handling hardware efficiently, as well as sorting materials based on various tags.
+
+Materials Categories:
+Materials in the workshop are divided into five categories:
+
+    Actuators
+    Devices
+    Processors
+    Sensors
+    Wires
+
+Each material has a unique ID, name, and belongs to one of the above categories.
+
+Shell Interface:
+The system is accessed through a shell interface, which provides commands for adding, deleting, displaying, and sorting materials. The provided commands are:
+
+    add: Add new hardware to the workshop.
+    del: Delete hardware from the workshop.
+    disp: Display the contents of the workshop.
+    sort: Sort the materials present in the workshop based on tags.
+
+Implementation:
+
+    Storing and Handling Materials:
+        The add command adds new hardware to the workshop. Hardware is stored in a linked list, added in reverse order.
+        The del command deletes specified hardware from the workshop.
+        The disp command displays the contents of the workshop.
+
+    Sorting Materials:
+        The sort command sorts the materials present in the workshop based on three tags: TYPE, NAME, and ID. Each tag can be assigned a "-r" flag to sort the materials in reverse order.
+        Materials can be sorted using multiple tags, allowing for more refined sorting criteria.
+
+Testing:
+Testing can be performed using prompt files containing predefined commands. These files simulate user input to test the functionality of the system.
+
+Example Usage:
+
+shell
+
+$ ./organized
+
+Quick Testing:
+Prompt files like example_test are provided to facilitate quick testing. Each line in the file represents a command to be executed by the system.
+
+Contributing:
+Contributions to this project are welcome. If you encounter any bugs or have suggestions for improvement, feel free to open an issue or submit a pull request on the GitHub repository.
+
+License:
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+Authors:
+Nicolas Dumetz
