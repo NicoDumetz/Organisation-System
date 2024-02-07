@@ -21,9 +21,9 @@ static int my_intcmp(int a, int b)
 static int chack_if_swap(linked *left, linked *right, char **args)
 {
     int swap = 0;
-    int i = 0;
+    int i;
 
-    while (args[i] != NULL && swap == 0) {
+    for (i = 0; args[i] != NULL && swap == 0; i++) {
         if (my_strcmp(args[i], "NAME") == 0)
             swap = my_strcmp(left->name, right->name);
         if (my_strcmp(args[i], "TYPE") == 0)
@@ -34,7 +34,6 @@ static int chack_if_swap(linked *left, linked *right, char **args)
             swap = -swap;
             i++;
         }
-        i++;
     }
     return swap;
 }
