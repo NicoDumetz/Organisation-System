@@ -11,14 +11,14 @@
 
 static int search_id(linked **list)
 {
-    int max = 0;
+    int max;
     linked *compt = *list;
 
     if (compt == NULL)
         return 0;
+    max = compt->maxid + 1;
     for (int i = 0; compt != NULL; i++) {
-        if (compt->id >= max)
-            max = compt->id + 1;
+        compt->maxid = max;
         compt = compt->next;
     }
     return max;
@@ -39,13 +39,12 @@ int add(void *data, char **args)
 
     for (i = 0; args[i]; i++) {
         add = malloc(sizeof(linked));
+        add->maxid = 0;
         add->id = search_id(list);
         add->type = verify_type(args[i]);
-        if (my_strcmp(add->type, "84") == 0)
+        if (my_strcmp(add->type, "84") == 0 || !args[i + 1])
             return 84;
         i++;
-        if (!args[i])
-            return 84;
         add->name = my_strdup(args[i]);
         add->next = *list;
         my_printf("%s n°%d - \"%s\" added.\n", add->type, add->id, add->name);
