@@ -21,7 +21,7 @@ all:	$(NAME)
 
 $(NAME):	$(OBJ)
 	cd my_printf/ && make
-	gcc -o $(NAME) $(OBJ) $(CFLAGS) -L./ -lshell -L./my_printf/ -lmy
+	gcc -o $(NAME) $(OBJ) $(CFLAGS) -L./shell/ -lshell -L./my_printf/ -lmy
 
 clean:
 	cd my_printf/ && make clean
