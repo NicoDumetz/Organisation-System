@@ -10,7 +10,7 @@ int my_intlen(long nb)
 {
     int compt = 0;
 
-    if ( nb < 0 ) {
+    if (nb < 0) {
         nb = nb * -1;
         compt++;
     }

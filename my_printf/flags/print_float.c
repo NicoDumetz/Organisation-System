@@ -11,7 +11,7 @@ void check_flags_float(long double nb, int *compt, int *list_flagscompt)
     if (list_flagscompt[4] > 0 && nb >= 0) {
         my_putchar('+');
         *compt += 1;
-    } else if ( list_flagscompt[3] > 0 && nb >= 0) {
+    } else if (list_flagscompt[3] > 0 && nb >= 0) {
         my_putchar(' ');
         *compt += 1;
     }
@@ -25,9 +25,9 @@ static void print_width(int *compt, int *list_flagscompt, long double nb,
 
     if (list_flagscompt[4] > 0 && nb >= 0) {
         char_print++;
-    } else if ( list_flagscompt[3] > 0 && nb >= 0)
+    } else if (list_flagscompt[3] > 0 && nb >= 0)
         char_print++;
-    if ( width < my_intlen(nb) + char_print + 1)
+    if (width < my_intlen(nb) + char_print + 1)
         return;
     for (int i = 0; i < width - (my_intlen(nb) + char_print + 1); i++) {
         my_putchar(zero);
@@ -43,9 +43,9 @@ static void print_width_int(int *compt, int *list_flagscompt, long nb,
 
     if (list_flagscompt[4] > 0 && nb >= 0) {
         char_print++;
-    } else if ( list_flagscompt[3] > 0 && nb >= 0)
+    } else if (list_flagscompt[3] > 0 && nb >= 0)
         char_print++;
-    if ( width < my_intlen(nb) + char_print )
+    if (width < my_intlen(nb) + char_print)
         return;
     for (int i = 0; i < width - (my_intlen(nb) + char_print); i++) {
         my_putchar(zero);
@@ -76,14 +76,14 @@ int print_float(va_list list, int *compt, int *list_flagscompt)
     nb = check_float(list, list_flagscompt);
     if (list_flagscompt[5] == 0) {
         return if_int(compt, list_flagscompt, nb);
-    } else if ( list_flagscompt[5] > 0)
+    } else if (list_flagscompt[5] > 0)
         precision = list_flagscompt[5];
     char_print = precision;
-    if ( list_flagscompt[2] == 0)
+    if (list_flagscompt[2] == 0)
         print_width(compt, list_flagscompt, nb, char_print);
     check_flags_float(nb, compt, list_flagscompt);
     *compt += my_put_float(nb, precision);
-    if ( list_flagscompt[2] > 0)
+    if (list_flagscompt[2] > 0)
         print_width(compt, list_flagscompt, nb, char_print);
     return 1;
 }

@@ -13,7 +13,7 @@ static char *my_revstr_convert(char *str)
     int len = my_strlen(str) - 1;
     char temp;
 
-    for ( index = 0; index < len; index++) {
+    for (index = 0; index < len; index++) {
         temp = str[index];
         str[index] = str[len];
         str[len] = temp;
@@ -28,7 +28,7 @@ char *my_put_convert_base(unsigned long nb, char *base)
     char res[30000];
     int index;
 
-    if ( nb == 0) {
+    if (nb == 0) {
         res[0] = '0';
         res[1] = '\0';
         return my_revstr_convert(res);
@@ -47,7 +47,7 @@ char *my_put_convert_base_ptr(unsigned long long nb, char *base)
     char res[30000];
     int index;
 
-    if ( nb == 0) {
+    if (nb == 0) {
         res[0] = '0';
         res[1] = '\0';
         return my_revstr_convert(res);
@@ -65,8 +65,8 @@ static char *calcul_prec(char *prec, char *res, int precision)
     int i;
 
     prec = malloc(sizeof(char) * (precision + my_strlen(res)));
-    if ( precision > my_strlen(res)) {
-        for (i = 0 ; i < precision - my_strlen(res); i++)
+    if (precision > my_strlen(res)) {
+        for (i = 0; i < precision - my_strlen(res); i++)
             prec[i] = '0';
         prec[i] = '\0';
     }
@@ -81,7 +81,7 @@ char *my_put_convert_base_prec(unsigned long nb, char *base, int precision)
     char *prec;
     int index;
 
-    if ( nb == 0) {
+    if (nb == 0) {
         res[0] = '0';
         res[1] = '\0';
     } else {

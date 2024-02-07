@@ -24,7 +24,7 @@ static int float_to_hexa(long double nb, int precision, char *base, int compt)
     }
     nb *= 16;
     nb += 0.5;
-    my_putchar(base[(int)nb ]);
+    my_putchar(base[(int)nb]);
     my_putchar(base[17]);
     my_putchar('+');
     my_put_nbr(exp);
@@ -35,14 +35,14 @@ int point_a(double nb, int precision, char *base)
 {
     int compt = 0;
 
-    if ( nb < 0) {
+    if (nb < 0) {
         my_putchar('-');
         nb *= -1;
         compt++;
     }
     my_putchar('0');
     my_putchar(base[16]);
-    if ( nb == 0) {
+    if (nb == 0) {
         my_putstr("0p+0");
         return 6;
     }

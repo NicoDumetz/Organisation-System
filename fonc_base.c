@@ -18,7 +18,7 @@ int my_strcmp(char const *s1, char const *s2)
         if (s2[index] > s1[index])
             return -1;
     }
-    if ( s1[index] == '\0' && s2[index] == '\0')
+    if (s1[index] == '\0' && s2[index] == '\0')
         return 0;
     if (s1[index] != '\0')
         return -1;
@@ -40,7 +40,7 @@ char *my_strdup(char const *src)
     char *str;
     int index;
 
-    str = malloc( (my_strlen(src) + 1) * sizeof(char));
+    str = malloc((my_strlen(src) + 1) * sizeof(char));
     for (index = 0; src[index]; index++)
         str[index] = src[index];
     str[index] = '\0';
@@ -65,7 +65,7 @@ static int check_ref(linked **begin, int id_ref)
     linked *compt = *begin;
 
     for (int i = 0; compt != NULL; i++) {
-        if ( compt->id == id_ref)
+        if (compt->id == id_ref)
             change = 0;
         compt = compt->next;
     }
@@ -85,7 +85,7 @@ int my_delete_nodes(linked **begin, int id_ref)
     avant = *begin;
     compt = (*begin)->next;
     for (index = 0; compt != NULL; index++) {
-        if ( compt->id == id_ref) {
+        if (compt->id == id_ref) {
             my_printf("%s n°%d - \"%s\" deleted.\n", compt->type, compt->id,
             compt->name);
             avant->next = compt->next;

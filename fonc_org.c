@@ -17,7 +17,7 @@ static int search_id(linked **list)
     if (compt == NULL)
         return 0;
     for (int i = 0; compt != NULL; i++) {
-        if ( compt->id >= max)
+        if (compt->id >= max)
             max = compt->id + 1;
         compt = compt->next;
     }

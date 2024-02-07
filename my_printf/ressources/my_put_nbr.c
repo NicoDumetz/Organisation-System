@@ -10,7 +10,7 @@
 
 static long is_negative(long nb)
 {
-    if ( nb < 0 ) {
+    if (nb < 0) {
         my_putchar('-');
         nb = nb * -1;
     }
@@ -19,12 +19,12 @@ static long is_negative(long nb)
 
 long my_put_nbr(long nb)
 {
-    if ( nb == -2147483648) {
+    if (nb == -2147483648) {
         write(1, "-2147483648", 11);
         return 0;
     }
     nb = is_negative(nb);
-    if ( nb <= 9 ) {
+    if (nb <= 9) {
         my_putchar(nb + 48);
     } else {
         my_put_nbr(nb / (long)10);
@@ -37,7 +37,7 @@ long my_putnbr_prec(long nb, int precision)
 {
     long new_nb;
 
-    if ( nb == -2147483648) {
+    if (nb == -2147483648) {
         write(1, "-2147483648", 11);
         return 0;
     }
@@ -45,7 +45,7 @@ long my_putnbr_prec(long nb, int precision)
     for (int i = 0; i < precision - my_intlen(nb); i++)
         my_putchar('0');
     new_nb = nb;
-    if ( new_nb <= 9 ) {
+    if (new_nb <= 9) {
         my_putchar(new_nb + 48);
     } else {
         my_put_nbr(new_nb / 10);
