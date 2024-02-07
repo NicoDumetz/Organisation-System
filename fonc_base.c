@@ -50,7 +50,7 @@ char *my_strdup(char const *src)
 static int check_start(linked **begin, int id_ref)
 {
     while (*begin != NULL && (*begin)->id == id_ref) {
-        my_printf("%s n°%d- \"%s\" deleted.\n", (*begin)->type, (*begin)->id,
+        my_printf("%s n°%d - \"%s\" deleted.\n", (*begin)->type, (*begin)->id,
         (*begin)->name);
         (*begin) = (*begin)->next;
     }
@@ -71,7 +71,7 @@ int my_delete_nodes(linked **begin, int id_ref)
     compt = (*begin)->next;
     for (index = 0; compt != NULL; index++) {
         if ( compt->id == id_ref) {
-            my_printf("%s n°%d- \"%s\" deleted.\n", compt->type, compt->id,
+            my_printf("%s n°%d - \"%s\" deleted.\n", compt->type, compt->id,
             compt->name);
             avant->next = compt->next;
         } else

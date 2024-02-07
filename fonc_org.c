@@ -70,7 +70,7 @@ int disp(void *data, char **args)
     if (*list == NULL)
         return 0;
     for (int i = 0; compt != NULL; i++) {
-        my_printf("%s n°%d - %s.\n", compt->type, compt->id,
+        my_printf("%s n°%d - \"%s\"\n", compt->type, compt->id,
         compt->name);
         compt = compt->next;
     }
