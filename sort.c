@@ -11,12 +11,14 @@
 static void swap(linked *compt)
 {
     void *dat;
+    int swap_id;
+
     dat = compt->name;
     compt->name = compt->next->name;
     compt->next->name = dat;
-    dat = compt->id;
+    swap_id = compt->id;
     compt->id = compt->next->id;
-    compt->next->id = dat;
+    compt->next->id = swap_id;
     dat = compt->type;
     compt->type = compt->next->type;
     compt->next->type = dat;
