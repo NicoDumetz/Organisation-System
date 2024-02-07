@@ -42,7 +42,7 @@ static int chack_if_swap(linked *left, linked *right, char **args)
 linked *merge(linked *left, linked *right, char **args)
 {
     linked *result = NULL;
-    int swap;
+    int swap = 0;
 
     if (left == NULL)
         return right;
