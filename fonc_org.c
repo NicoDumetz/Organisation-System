@@ -9,30 +9,25 @@
 #include "include/my_printf.h"
 #include "include/organized.h"
 
-
-static int get_high_id(linked **list)
+static int search_id(linked **list)
 {
-    int max = 0;
+    int min;
     linked *compt = *list;
 
-    for (int i = 0; compt != NULL; i++) {
-        if (max < compt->id)
-            max = compt->id + 1;
-        compt = compt->next;
-    }
-    return max;
+    if (compt == NULL)
+        return 0;
+    min = compt->id + 1;
+    return min;
 }
 
 int add(void *data, char **args)
 {
     linked **list = data;
     linked *add;
-    int index = get_high_id(list);
 
     for (int i = 0; args[i]; i++) {
         add = malloc(sizeof(linked));
-        add->id = index;
-        index++;
+        add->id = search_id(list);
         add->type = verify_type(args[i]);
         if (my_strcmp(add->type, "84") == 0)
             return 84;
@@ -44,7 +39,6 @@ int add(void *data, char **args)
         my_printf("%s n°%d - \"%s\" added.\n", add->type, add->id, add->name);
         *list = add;
     }
-    return 0;
 }
 
 int del(void *data, char **args)
