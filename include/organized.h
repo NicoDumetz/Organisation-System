@@ -18,7 +18,6 @@
     #include <wchar.h>
 
 typedef struct linked {
-    int maxid;
     int id;
     char *name;
     char *type;

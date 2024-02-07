@@ -9,26 +9,6 @@
 #include "include/my_printf.h"
 #include "include/organized.h"
 
-static int search_id(linked **list)
-{
-    int max;
-    linked *compt = *list;
-
-    if (compt == NULL)
-        return 0;
-    for (int i = 0; compt != NULL; i++) {
-        if (compt->maxid >= max)
-            max = compt->maxid + 1;
-        compt = compt->next;
-    }
-    compt = *list;
-    for (int i = 0; compt != NULL; i++) {
-        compt->maxid = max;
-        compt = compt->next;
-    }
-    return max;
-}
-
 int check_line(int i)
 {
     if (i == 0)
@@ -41,11 +21,12 @@ int add(void *data, char **args)
     linked **list = data;
     linked *add;
     int i;
+    static int max_id = 0;
 
     for (i = 0; args[i]; i++) {
         add = malloc(sizeof(linked));
-        add->maxid = 0;
-        add->id = search_id(list);
+        add->id = max_id;
+        max_id++;
         add->type = verify_type(args[i]);
         if (my_strcmp(add->type, "84") == 0 || !args[i + 1])
             return 84;
