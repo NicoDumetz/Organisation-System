@@ -11,13 +11,17 @@
 
 static int search_id(linked **list)
 {
-    int min;
+    int max = 0;
     linked *compt = *list;
 
     if (compt == NULL)
         return 0;
-    min = compt->id + 1;
-    return min;
+    for (int i = 0; compt != NULL; i++) {
+        if ( compt->id >= max)
+            max = compt->id + 1;
+        compt = compt->next;
+    }
+    return max;
 }
 
 int add(void *data, char **args)
