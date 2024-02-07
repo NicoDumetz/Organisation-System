@@ -58,15 +58,7 @@ int sort(void *data, char **args)
 {
     linked **list = data;
 
-    for (int i = 0; args[i]; i++) {
-        if (my_strcmp(args[i], "NAME") == 0 || my_strcmp(args[i], "TYPE") ==
-        0)
-            my_sort_list(list, &comp_name);
-        if (my_strcmp(args[i], "-r") == 0)
-            my_rev_list(list);
-        if (my_strcmp(args[i], "ID") == 0)
-            my_sort_list(list, &comp_id);
-    }
+    my_sort_list_v2(list, args);
     return 0;
 }
 
