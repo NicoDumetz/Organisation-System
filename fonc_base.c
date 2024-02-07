@@ -29,7 +29,7 @@ int my_strcmp(char const *s1, char const *s2)
 char *verify_type(char const *src)
 {
     if (my_strcmp(src, "ACTUATOR") == 0 || my_strcmp(src, "DEVICE") == 0 ||
-    my_strcmp(src, "PROCESSORS") == 0 || my_strcmp(src, "SENSORS") == 0 ||
+    my_strcmp(src, "PROCESSORS") == 0 || my_strcmp(src, "SENSOR") == 0 ||
     my_strcmp(src, "WIRE") == 0)
         return my_strdup(src);
     return "84";
