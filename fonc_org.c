@@ -72,7 +72,7 @@ int sort(void *data, char **args)
 
     for (int i = 0; args[i]; i++) {
         if (my_strcmp(args[i], "TYPE") == 0 || my_strcmp(args[i],
-        "NAME") == 0 || my_strcmp(args[i], "Id") == 0 ||
+        "NAME") == 0 || my_strcmp(args[i], "ID") == 0 ||
         my_strcmp(args[i], "-r") == 0)
             continue;
         else
