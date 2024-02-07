@@ -46,15 +46,26 @@ char *my_strdup(char const *src)
     return str;
 }
 
+static int check_start(linked **begin, int id_ref)
+{
+    while (*begin != NULL && (*begin)->id == id_ref) {
+        my_printf("%s n°%d- \"%s\" deleted.\n", (*begin)->type, (*begin)->id,
+        (*begin)->name);
+        (*begin) = (*begin)->next;
+    }
+    if (*begin == NULL)
+        return 1;
+    return 0;
+}
+
 int my_delete_nodes(linked **begin, int id_ref)
 {
     linked *compt;
     linked *avant;
     int index;
 
-    while ((*begin)->id == id_ref) {
-        (*begin) = (*begin)->next;
-    }
+    if (check_start(begin, id_ref) == 1)
+        return 1;
     avant = *begin;
     compt = (*begin)->next;
     for (index = 0; compt != NULL; index++) {

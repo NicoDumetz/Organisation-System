@@ -63,7 +63,7 @@ int disp(void *data, char **args)
     linked *compt = *list;
 
     if (*list == NULL)
-        printf("caca\n");
+        my_printf("caca\n");
     for (int i = 0; compt != NULL; i++) {
         my_printf("%s n°%d - %s.\n", compt->type, compt->id,
         compt->name);
