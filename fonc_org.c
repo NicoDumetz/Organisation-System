@@ -34,6 +34,8 @@ int add(void *data, char **args)
         add->id = index;
         index++;
         add->type = verify_type(args[i]);
+        if (my_strcmp(add->type, "84") == 0)
+            return 84;
         i++;
         add->name = my_strdup(args[i]);
         add->next = *list;

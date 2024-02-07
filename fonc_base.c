@@ -32,6 +32,7 @@ char *verify_type(char const *src)
     my_strcmp(src, "PROCESSORS") == 0 || my_strcmp(src, "SENSORS") == 0 ||
     my_strcmp(src, "WIRE") == 0)
         return my_strdup(src);
+    return "84";
 }
 
 char *my_strdup(char const *src)
