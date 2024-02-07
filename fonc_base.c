@@ -59,14 +59,29 @@ static int check_start(linked **begin, int id_ref)
     return 0;
 }
 
+static int check_ref(linked **begin, int id_ref)
+{
+    int change = 84;
+    linked *compt = *begin;
+
+    for (int i = 0; compt != NULL; i++) {
+        if ( compt->id == id_ref)
+            change = 0;
+        compt = compt->next;
+    }
+    return change;
+}
+
 int my_delete_nodes(linked **begin, int id_ref)
 {
     linked *compt;
     linked *avant;
     int index;
 
+    if (check_ref(begin, id_ref) == 84)
+        return 84;
     if (check_start(begin, id_ref) == 1)
-        return 1;
+        return 0;
     avant = *begin;
     compt = (*begin)->next;
     for (index = 0; compt != NULL; index++) {
@@ -78,5 +93,4 @@ int my_delete_nodes(linked **begin, int id_ref)
             avant = compt;
         compt = compt->next;
     }
-    return 0;
 }

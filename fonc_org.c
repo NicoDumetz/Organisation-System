@@ -41,22 +41,39 @@ int add(void *data, char **args)
     }
 }
 
+static int check_num(char *str)
+{
+    for (int i = 0; str[i]; i++) {
+        if (str[i] >= 48 && str[i] <= 57)
+            continue;
+        else
+            return 1;
+    }
+    return 0;
+}
+
 int del(void *data, char **args)
 {
     linked **list = data;
 
+    for (int i = 0; args[i]; i++) {
+        if (check_num(args[i]) == 1)
+            return 84;
+    }
     for (int i = 0; args[i]; i++)
-        my_delete_nodes(list, my_getnbr(args[i]));
+        if (my_delete_nodes(list, my_getnbr(args[i])) == 84)
+            return 84;
     return 0;
 }
 
 int sort(void *data, char **args)
 {
     linked **list = data;
+
     for (int i = 0; args[i]; i++) {
         if (my_strcmp(args[i], "TYPE") == 0 || my_strcmp(args[i],
-         "NAME") == 0 || my_strcmp(args[i], "Id") == 0 ||
-         my_strcmp(args[i], "-r") == 0)
+        "NAME") == 0 || my_strcmp(args[i], "Id") == 0 ||
+        my_strcmp(args[i], "-r") == 0)
             continue;
         else
             return 84;
