@@ -20,7 +20,7 @@ static int my_intcmp(int a, int b)
 
 static int chack_if_swap(linked *left, linked *right, char **args)
 {
-    int swap;
+    int swap = 0;
     int i = 0;
 
     while (args[i] != NULL && swap == 0) {
