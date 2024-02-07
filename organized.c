@@ -13,5 +13,5 @@ int main(int ac, char *av)
 {
     linked *begin = NULL;
 
-    workshop_shell(&begin);
+    return workshop_shell(&begin);
 }
