@@ -16,7 +16,12 @@ static int search_id(linked **list)
 
     if (compt == NULL)
         return 0;
-    max = compt->maxid + 1;
+    for (int i = 0; compt != NULL; i++) {
+        if (compt->maxid >= max)
+            max = compt->maxid + 1;
+        compt = compt->next;
+    }
+    compt = *list;
     for (int i = 0; compt != NULL; i++) {
         compt->maxid = max;
         compt = compt->next;
